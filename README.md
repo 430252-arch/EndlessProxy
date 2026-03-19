@@ -1,2 +1,2 @@
 # EndlessProxy
-Quick Proxy made with Kross
+Quick Proxy made with Kross and Airbender
