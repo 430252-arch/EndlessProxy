@@ -7,38 +7,38 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
+ 
 <!-- Animated cityscape canvas -->
 <canvas id="city-canvas"></canvas>
-
+ 
 <!-- Browser chrome (light nav bar) -->
 <div class="browser-chrome">
   <div class="nav-bar">
-
+ 
     <!-- Back (disabled) -->
     <div class="nav-btn disabled">
       <svg viewBox="0 0 24 24"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg>
     </div>
-
+ 
     <!-- Forward -->
     <div class="nav-btn">
       <svg viewBox="0 0 24 24"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg>
     </div>
-
+ 
     <!-- Reload -->
     <div class="nav-btn">
       <svg viewBox="0 0 24 24"><path d="M17.65 6.35A7.958 7.958 0 0012 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08A5.99 5.99 0 0112 18c-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z"/></svg>
     </div>
-
+ 
     <!-- Tab add -->
     <div class="tab-add-btn">+</div>
-
+ 
     <!-- Address bar -->
     <div class="address-bar">
       <svg viewBox="0 0 24 24"><path d="M3 5h2V3c-1.1 0-2 .9-2 2zm0 8h2v-2H3v2zm4 8h2v-2H7v2zM3 9h2V7H3v2zm10-6h-2v2h2V3zm6 0v2h2c0-1.1-.9-2-2-2zM5 21v-2H3c0 1.1.9 2 2 2zm-2-4h2v-2H3v2zM9 3H7v2h2V3zm2 18h2v-2h-2v2zm8-8h2v-2h-2v2zm0 8c1.1 0 2-.9 2-2h-2v2zm0-12h2V7h-2v2zm0 8h2v-2h-2v2zm-4 4h2v-2h-2v2zm0-16h2V3h-2v2z"/></svg>
       Search with Google or enter address
     </div>
-
+ 
     <!-- Right icons -->
     <div class="nav-right">
       <div class="nav-btn">
@@ -51,16 +51,16 @@
         <svg viewBox="0 0 24 24"><path d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/></svg>
       </div>
     </div>
-
+ 
   </div>
 </div>
-
+ 
 <!-- Page content -->
 <div class="page">
-
+ 
   <!-- Glowing title -->
-  <div class="proxy-title">Proxy Name</div>
-
+  <div class="proxy-title">Endless Proxy</div>
+ 
   <!-- Search bar -->
   <div class="search-wrap">
     <div class="search-bar">
@@ -68,20 +68,20 @@
       Search Google or type a URL
     </div>
   </div>
-
+ 
   <!-- Shortcuts panel -->
   <div class="shortcuts">
-
+ 
     <div class="shortcut">
       <div class="shortcut-icon"><div class="icon-sw">S</div></div>
       <span class="shortcut-label">Downloads</span>
     </div>
-
+ 
     <div class="shortcut">
       <div class="shortcut-icon"><div class="icon-sw">S</div></div>
       <span class="shortcut-label">Downloads</span>
     </div>
-
+ 
     <div class="shortcut">
       <div class="shortcut-icon">
         <svg class="google-g" viewBox="0 0 48 48">
@@ -93,7 +93,7 @@
       </div>
       <span class="shortcut-label">Google Sea...</span>
     </div>
-
+ 
     <div class="shortcut">
       <div class="shortcut-icon">
         <svg class="google-g" viewBox="0 0 48 48">
@@ -105,7 +105,7 @@
       </div>
       <span class="shortcut-label">https//ww...</span>
     </div>
-
+ 
     <div class="shortcut">
       <div class="shortcut-icon">
         <svg class="bing-icon" viewBox="0 0 24 24">
@@ -114,22 +114,22 @@
       </div>
       <span class="shortcut-label">Search - Mi...</span>
     </div>
-
+ 
   </div>
 </div>
-
+ 
 <script>
 // ── Animated cyberpunk cityscape ──
 const canvas = document.getElementById('city-canvas');
 const ctx = canvas.getContext('2d');
-
+ 
 function resize() {
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
 }
 resize();
 window.addEventListener('resize', resize);
-
+ 
 // Building definitions
 const buildings = [];
 function initBuildings() {
@@ -147,7 +147,7 @@ function initBuildings() {
     });
   }
 }
-
+ 
 function generateWindows(bw, bh) {
   const wins = [];
   const cols = Math.floor(bw / 7);
@@ -164,7 +164,7 @@ function generateWindows(bw, bh) {
   }
   return wins;
 }
-
+ 
 // Rain drops
 const drops = [];
 function initRain() {
@@ -181,17 +181,17 @@ function initRain() {
     });
   }
 }
-
+ 
 initBuildings();
 initRain();
 window.addEventListener('resize', () => { initBuildings(); initRain(); });
-
+ 
 let frame = 0;
-
+ 
 function draw() {
   frame++;
   const W = canvas.width, H = canvas.height;
-
+ 
   // Sky gradient
   const sky = ctx.createLinearGradient(0, 0, 0, H);
   sky.addColorStop(0, '#020c18');
@@ -200,7 +200,7 @@ function draw() {
   sky.addColorStop(1, '#030d1a');
   ctx.fillStyle = sky;
   ctx.fillRect(0, 0, W, H);
-
+ 
   // Distant glow bands
   const glowY = H * 0.38;
   const glow = ctx.createRadialGradient(W * 0.5, glowY, 0, W * 0.5, glowY, W * 0.5);
@@ -208,27 +208,27 @@ function draw() {
   glow.addColorStop(1, 'transparent');
   ctx.fillStyle = glow;
   ctx.fillRect(0, 0, W, H);
-
+ 
   // Pink accent glow right
   const pinkGlow = ctx.createRadialGradient(W * 0.88, H * 0.3, 0, W * 0.88, H * 0.3, W * 0.25);
   pinkGlow.addColorStop(0, 'rgba(255,0,120,0.06)');
   pinkGlow.addColorStop(1, 'transparent');
   ctx.fillStyle = pinkGlow;
   ctx.fillRect(0, 0, W, H);
-
+ 
   // Draw buildings
   buildings.forEach(b => {
     const baseY = H * 0.85;
     const bx = b.x, by = baseY - b.h;
-
+ 
     ctx.fillStyle = b.color;
     ctx.fillRect(bx, by, b.w, b.h);
-
+ 
     // Subtle neon edge
     ctx.strokeStyle = 'rgba(0,200,255,0.06)';
     ctx.lineWidth = 1;
     ctx.strokeRect(bx, by, b.w, b.h);
-
+ 
     // Windows
     b.windows.forEach(win => {
       if (!win.lit) return;
@@ -241,12 +241,12 @@ function draw() {
       ctx.fillRect(wx, wy, 4, 5);
       ctx.globalAlpha = 1;
     });
-
+ 
     // Rooftop glow
     ctx.fillStyle = 'rgba(0,229,255,0.04)';
     ctx.fillRect(bx, by, b.w, 2);
   });
-
+ 
   // Ground reflection band
   const ground = H * 0.85;
   const refGrad = ctx.createLinearGradient(0, ground, 0, H);
@@ -255,7 +255,7 @@ function draw() {
   refGrad.addColorStop(1, '#010810');
   ctx.fillStyle = refGrad;
   ctx.fillRect(0, ground, W, H - ground);
-
+ 
   // Rain
   ctx.lineCap = 'round';
   drops.forEach(d => {
@@ -265,7 +265,7 @@ function draw() {
     ctx.moveTo(d.x, d.y);
     ctx.lineTo(d.x + d.len * Math.sin(d.angle), d.y + d.len);
     ctx.stroke();
-
+ 
     d.y += d.speed;
     d.x += d.speed * Math.sin(d.angle);
     if (d.y > H) {
@@ -273,12 +273,13 @@ function draw() {
       d.x = Math.random() * W;
     }
   });
-
+ 
   requestAnimationFrame(draw);
 }
-
+ 
 draw();
 </script>
-
+ 
 </body>
 </html>
+ 
